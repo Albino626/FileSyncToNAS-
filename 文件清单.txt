@@ -1,0 +1,29 @@
+FileSyncToNAS 1.0.0 文件清单
+================================
+
+【核心文件】
+  sync_to_nas.py          - 主程序文件
+  config.json.example     - 配置文件示例
+  requirements.txt        - Python依赖包列表
+  README.md               - 使用说明文档
+
+【启动脚本】
+  install.bat             - 安装脚本（首次运行）
+  start_sync.bat          - 启动同步服务
+  start_sync.vbs          - 静默启动同步服务（无窗口）
+  manual_sync.bat         - 手动执行一次同步
+
+【自动启动】
+  setup_autostart.bat     - 设置开机自动启动
+  remove_autostart.bat    - 取消开机自动启动
+
+【使用说明】
+  1. 首次使用请运行 install.bat 安装依赖
+  2. 复制 config.json.example 为 config.json 并编辑配置
+  3. 运行 start_sync.bat 启动同步服务
+  4. 详细说明请查看 README.md
+
+【版本信息】
+  版本: 1.0.0
+  更新日期: 2025-01-05
+

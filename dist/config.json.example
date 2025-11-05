@@ -1,0 +1,91 @@
+{
+    // ==========================================
+    // 文件同步配置文件模板
+    // ==========================================
+    // 使用说明：
+    // 1. 将此文件复制为 config.json
+    // 2. 根据实际情况修改以下配置项
+    // 3. 配置文件支持注释（// 和 # 开头）
+    // ==========================================
+
+    // 源目录：要同步的本地文件夹路径
+    "source_dir": "C:\\Users\\YourName\\Documents\\Sync",
+    
+    // 目标目录：NAS上的目标文件夹路径（使用 \\服务器\共享名\路径 格式）
+    "target_dir": "\\\\NAS_SERVER\\share\\Sync",
+    
+                           // 使用的协议类型：smb, ftp, nfs, rsync, webdav
+            // 只填写一个协议名称，程序将使用对应的协议配置
+            "protocol": "smb",
+            
+            // 同步方向：two-way（双向）、local-to-nas（本地到NAS）、nas-to-local（NAS到本地）
+            // two-way: 双向同步（NAS和本地互相同步）
+            // local-to-nas: 仅将电脑的数据变更同步至NAS
+            // nas-to-local: 仅将NAS的数据变更同步至电脑
+            "sync_direction": "local-to-nas",
+            
+                        // 是否同步删除操作（可选，默认false）
+            // true: 删除操作会同步
+            // false: 删除操作不会同步（数据保护）
+            "sync_deletes": false,
+     
+     // ==========================================
+     // SMB 协议配置（当前使用的协议）
+     // ==========================================
+     "smb": {
+        // 服务器地址（IP 或主机名）
+        "server": "192.168.1.100",
+        // 用户名（留空表示使用匿名登录）
+        "username": "your_username",
+        // 密码（留空表示使用匿名登录）
+        "password": "your_password",
+        // SMB 端口（默认 445）
+        "port": 445
+    },
+    
+    // ==========================================
+    // 其他协议配置示例（未使用的协议请保持注释状态）
+    // ==========================================
+    // 如需使用其他协议，请：
+    // 1. 取消注释对应协议的配置块
+    // 2. 填写正确的配置信息
+    // 3. 修改上面的 "protocol" 字段为对应的协议名称
+    // ==========================================
+    
+    // FTP 协议配置示例
+    // "ftp": {
+    //     "host": "192.168.1.100",
+    //     "port": 21,
+    //     "username": "your_username",
+    //     "password": "your_password",
+    //     "base_path": "/Sync"
+    // },
+    
+    // NFS 协议配置示例
+    // "nfs": {
+    //     "host": "192.168.1.100",
+    //     "export_path": "/export",
+    //     "base_path": "Sync",
+    //     "mount_point": "Z:"
+    // },
+    
+    // rsync 协议配置示例（通过 SSH）
+    // "rsync": {
+    //     "host": "192.168.1.100",
+    //     "port": 22,
+    //     "username": "your_username",
+    //     "password": "your_password",
+    //     "base_path": "/Sync",
+    //     "use_ssh": true
+    // },
+    
+    // WebDAV 协议配置示例
+    // "webdav": {
+    //     "url": "http://192.168.1.100:8080",
+    //     "username": "your_username",
+    //     "password": "your_password",
+    //     "base_path": "Sync",
+    //     "auth_type": "basic"
+    // }
+}
+
